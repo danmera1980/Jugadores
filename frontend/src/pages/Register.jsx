@@ -3,12 +3,14 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Welcome from '../components/Welcome';
-const url = process.env.REACT_APP_BACKEND_URL;
+const backend_url = process.env.REACT_APP_BACKEND_URL
 
 export default function Register({setAuth}) {
 
     const [inputs, setInputs] = useState({
+        name: "",
+        lastName: "",
+        username: "",
         email: "",
         password: ""
     });
@@ -25,8 +27,8 @@ export default function Register({setAuth}) {
     const onSubmitForm = async (e)=>{
         e.preventDefault();
         try {
-            const body = {email, password}
-            const response = await axios.post(`${url}/auth/register`, body)
+            const body = {name, lastName, username, email, password}
+            const response = await axios.post(`${backend_url}/auth/register`, body)
             // console.log(response.data);
 
             if(response.data.token){
@@ -44,7 +46,6 @@ export default function Register({setAuth}) {
   return (
     <Fragment>
         <div className="login-screen">
-            <Welcome/>
             <div className="login">
                 <ToastContainer />
                 <h1 className='text-center my-5'>Register</h1>
