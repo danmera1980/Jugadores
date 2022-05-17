@@ -65,6 +65,34 @@ code {
   gap: 50px;
 }
 
+.playersHead{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconBtn{
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  color: #2e384d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.warning:hover{
+  background-color: crimson;
+  color: white;
+}
+
+.normal:hover{
+  background-color: #00a683;
+  color: white;
+}
+
+
 /* -------------- New Player Form -------------- */
 
 /* .newPlayer {
@@ -86,20 +114,17 @@ code {
 
 .playerCard{
   width: 97%;
+  height: 30px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 5px;
   font-size: 18px;
 }
 
-.playerCard:hover{
-  background-color: #00a683;
-  color: white;
-}
 
 .btnSection{
   display: flex;
-  gap: 5px;
 }
 
 .cardBtn{
@@ -107,5 +132,5 @@ code {
 }
 
 .cardBtn:hover{
-  color: yellow;
+  color: crimson;
 }

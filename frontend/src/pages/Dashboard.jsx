@@ -7,6 +7,8 @@ import CreatePlayer from './CreatePlayer';
 import Player from './Player';
 import Players from '../components/Players';
 import Alignment from '../components/Alignment';
+import {FiUserPlus} from 'react-icons/fi'
+import { Link } from 'react-router-dom';
 const url = process.env.REACT_APP_BACKEND_URL;
 
 export default function Dashboard() {
@@ -28,6 +30,8 @@ export default function Dashboard() {
         }
     }
 
+
+
     console.log(players);
 
   return (
@@ -38,7 +42,10 @@ export default function Dashboard() {
                 <Header/>
                 <div className="content">
                     <div className="players">
-                        <h3>Players</h3>
+                        <div className="playersHead">
+                            <h3>Players</h3>
+                            <Link to='/new' className='iconBtn'><FiUserPlus/></Link>
+                        </div>
                         <Players players={players}/>
                     </div>
                     <div className="alignment">
