@@ -25,62 +25,9 @@ code {
     monospace;
 }
 
-.login-screen{
-  display: flex;
-}
-
-.welcome{
-  color: var(--second-font-color);
-  font-size: 40px;
-  font-weight: 700;
-  height: 100vh;
-  width: 40%;
-  background-color: var(--second-background-color);
-  display: inherit;
-  align-items: center;
-  justify-content: center;
-}
-
-.login{
-  margin: 0 auto;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: var(--main-font-color);
-}
-
-.login-form{
-  margin-top: 25px;
-  margin-bottom: 20px;
-  background-color: white;
-  padding: 30px;
-  border-radius: 20px;
-}
-
-.login span{
-  text-align: center;
-  font-size: 16px;
-}
-
 .dashboard{
   margin: 0 auto;
   display: flex;
-}
-
-.sidebar{
-  height: 100vh;
-  width: 280px;
-  background-color: var(--second-background-color);
-  /* padding: 60px  30px; */
-  color: var(--second-font-color);
-}
-
-.sidebar h1 {
-  font-size: 28px;
-  font-weight: 700;
-  padding-left: 10px;
-  font-style: normal;
 }
 
 .logo{
@@ -100,6 +47,7 @@ code {
   width: 1080px;
 }
 
+/* --------------- Header --------------- */
 .header{
   display: flex;
   align-items: center;
@@ -109,42 +57,55 @@ code {
   color: var(--main-font-color);
 }
 
-.logged{
+/* ---------- Dashboard ---------- */
+.content{
+  width: 100%;
+  margin: 50px 0 50px 0;
   display: flex;
-  color: var(--third-font-color);
+  gap: 50px;
 }
 
-.option{
-  font-weight: 400;
-  font-size: 16px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  margin-left: 4px;
-  /* margin-right: 10px; */
-  padding-left: 20px;
-  height: 50px;
-  color: var(--link-hover);
-  --link-hover: var(--second-font-color);
+/* -------------- New Player Form -------------- */
+
+/* .newPlayer {
+  width: 500px;
+  margin: 0 auto;
+} */
+.new-player-form{
+  display: flex;
+  flex-direction: column;
 }
 
-.option a{
-  text-decoration: none;
-  color: var(--link-hover);
+/* -------------- All Players View -------------- */
+.playerSection{
+  width: 300px;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
 }
 
-.option:hover{
-  background-color: var(--main-hover-color);
-  border-radius: 8px 0 0 8px;
-  color: var(--main-hover-font-color);
-  font-weight: 400;
-  --link-hover: var(--main-hover-font-color);
+.playerCard{
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  font-size: 18px;
+}
+
+.playerCard:hover{
+  background-color: #00a683;
+  color: white;
+}
+
+.btnSection{
+  display: flex;
+  gap: 5px;
+}
+
+.cardBtn{
   cursor: pointer;
 }
 
-.active{
-  font-weight: 700;
-}
-
-.option a{
-  padding-left: 10px;
+.cardBtn:hover{
+  color: yellow;
 }
