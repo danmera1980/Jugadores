@@ -22,30 +22,51 @@ const onChange = (e) => {
         <div>
               <div>
                 <form className="new-player-form">
-                  <div>
-                    <label htmlFor="name">Nombre: </label>
-                    <input value={name} onChange={e => onChange(e)} type="text" name="name" id="name" placeholder='Nombre' />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName">Apellido: </label>
-                    <input value={lastName} onChange={e => onChange(e)} type="text" name="lastName" id="lastName" placeholder='Apellido' />
-                  </div>
-                  <div>
-                    <label htmlFor="dob">Fecha de Nacimiento: </label>
-                    <input value={dob} onChange={e => onChange(e)} type="date" name="dob" id="dob" placeholder='Fecha de Nacimiento' />
-                  </div>
-                  <div>
-                    <label htmlFor="position">Pocisión: </label>
-                    <input value={position} onChange={e => onChange(e)} type="text" name="name" id="name" placeholder='Nombre' />
-                  </div>
-                  <div>
-                    <label htmlFor="weight">Peso: </label>
-                    <input value={weight} onChange={e => onChange(e)} type="number" name="weight" id="weight" placeholder='Peso en kg' />
-                    <span>kg</span>
-                  </div>
-                  <div>
-                    <button>Crear</button>
-                  </div>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <label htmlFor="name">Nombre: </label>
+                        </td>
+                        <td>
+                          <input value={name} onChange={e => onChange(e)} type="text" name="name" id="name" placeholder='Nombre' />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label htmlFor="lastName">Apellido: </label>
+                        </td>
+                        <td>
+                          <input value={lastName} onChange={e => onChange(e)} type="text" name="lastName" id="lastName" placeholder='Apellido' />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label htmlFor="dob">Fecha de Nacimiento: </label>
+                        </td>
+                        <td>
+                          <input value={dob} onChange={e => onChange(e)} type="date" name="dob" id="dob" placeholder='Fecha de Nacimiento' />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label htmlFor="position">Pocisión: </label>
+                        </td>
+                        <td>
+                          <input value={position} onChange={e => onChange(e)} type="text" name="name" id="name" placeholder='Nombre' />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label htmlFor="weight">Peso: </label>
+                        </td>
+                        <td>
+                          <input value={weight} onChange={e => onChange(e)} type="number" name="weight" id="weight" placeholder='Peso en kg' />
+                        </td>
+                        <span>kg</span>
+                      </tr>
+                    </tbody>
+                  </table>
                 </form>
               </div>
         </div>

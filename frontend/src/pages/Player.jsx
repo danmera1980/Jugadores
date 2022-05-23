@@ -1,43 +1,59 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+const url = process.env.REACT_APP_BACKEND_URL;
 
 export default function Player({id}) {
   const [player, setPlayer] = useState("")
+
+  useEffect(()=> {
+    loadPlayer(id)
+  }, [])
+  
+  const loadPlayer = async(id)=> {
+    try {
+      const response = await axios.get(`${url}/players/${id}`);
+      setPlayer({
+        ...response.data,
+        age: Math.floor((new Date() - new Date(response.data.dob).getTime()) / 3.15576e+10)
+      })
+    } catch (error) {
+        toast.error(error.respose.data)
+        console.log(error);
+    }
+  }
+  console.log(id);
   return (
     <Fragment>
         <div className="details">
-          <h1>Detalles del Jugador</h1>
-          <div className='view'>
-            <div className="">
-              <span className="label">Nombre</span>
-              <span className="detail">{player.name}</span>
-            </div>
-            <div className="">
-              <span className="label">Apellido</span>
-              <span className="detail">{player.lastName}</span>
-            </div>
-            <div className="">
-              <span className="label">Fecha de Nacimiento</span>
-              <span className="detail">{player.dob}</span>
-            </div>
-            <div className="">
-              <span className="label">Años</span>
-              <span className="detail">{player.dob}</span>
-            </div>
-            <div className="">
-              <span className="label">Posición</span>
-              <span className="detail">{player.position}</span>
-            </div>
-            <div className="">
-              <span className="label">Peso</span>
-              <span className="detail">{player.weight}</span>
-            </div>
-
-            <div className="buttons">
-              <button>Editar</button>
-              <button>Eliminar</button>
-              <button>Salir</button>
-            </div>
-          </div>
+          <table className='view'>
+            <tbody>
+              <tr>
+                <td className="label">Nombre: </td>
+                <td className="detail">{player.name}</td>
+              </tr>
+              <tr>
+                <td className="label">Apellido: </td>
+                <td className="detail">{player.lastName}</td>
+              </tr>
+              <tr>
+                <td className="label">Fecha de Nacimiento: </td>
+                <td className="detail">{player.dob}</td>
+              </tr>
+              <tr>
+                <td className="label">Años: </td>
+                <td className="detail">{player.age}</td>
+              </tr>
+              <tr>
+                <td className="label">Posición: </td>
+                <td className="detail">{player.position}</td>
+              </tr>
+              <tr>
+                <td className="label">Peso: </td>
+                <td className="detail">{player.weight}</td>
+              </tr>
+            </tbody>
+          </table>
           <div className="edit">
             
           </div>
